@@ -180,13 +180,16 @@ function filter() {
     }
 }
 function showAllEmp() {
-    removeExisting();
-    document.getElementById("tbldiv").style.display = "block";
-    for (let did in data) {
-        for (i = 1; i < data[did].length; i++) {
-            addRow(data[did][i], did);
+    removeExisting().then(() => {
+        document.getElementById("tbldiv").style.display = "block";
+        for (let did in data) {
+            for (i = 1; i < data[did].length; i++) {
+                addRow(data[did][i], did);
+            }
         }
-    }
+    }).catch((err)=>{
+        console.log(err);
+    })
 }
 function addRow(emp, did) {
     let tr = document.createElement("tr");
@@ -222,23 +225,30 @@ function addRow(emp, did) {
     tbl.appendChild(tr);
 }
 function showDeptEmp(dept) {
-    removeExisting();
-    let did = deptid[dept];
-    if (data[did].length < 2) {
-        document.getElementById("tbldiv").style.display = "none";
-    }
-    else {
-        document.getElementById("tbldiv").style.display = "block";
-        for (i = 1; i < data[did].length; i++) {
-            addRow(data[did][i], did)
+    removeExisting().then(() => {
+        let did = deptid[dept];
+        if (data[did].length < 2) {
+            document.getElementById("tbldiv").style.display = "none";
         }
-    }
+        else {
+            document.getElementById("tbldiv").style.display = "block";
+            for (i = 1; i < data[did].length; i++) {
+                addRow(data[did][i], did)
+            }
+        }
+    }).catch((err) => {
+        console.log(err);
+    })
 }
 function removeExisting() {
-    let tb = document.getElementById("tbl").rows.length;
-    for (let i = 1; i < tb; i++) {
-        document.getElementById("tbl").deleteRow(1);
-    }
+    return new Promise((resolve, reject) => {
+        let table = document.getElementById("tbl")
+        let tb = table.rows.length;
+        for (let i = 1; i < tb; i++) {
+            table.deleteRow(1);
+        }
+        resolve();
+    })
 }
 function sortTable(e) {
     switch (e.innerHTML) {
@@ -269,23 +279,29 @@ function sortBy(str) {
         key = Object.keys(data);
         let allobj = [];
         for (let i = 0; i < key.length; i++) {
-            
+
             data[key[i]].slice(1).forEach(element => {
                 element.did = key[i];
-                element.dname=data[key[i]][0].dname;
+                element.dname = data[key[i]][0].dname;
                 allobj.push(element);
             });
         }
         let sortedobjects = allobj.sort((a, b) => (a[str] > b[str]) ? 1 : -1);
-        removeExisting();
-        for (let i = 0; i < sortedobjects.length; i++) {
-            addRow(sortedobjects[i], sortedobjects[i].did);
-        }
+        removeExisting().then(() => {
+            for (let i = 0; i < sortedobjects.length; i++) {
+                addRow(sortedobjects[i], sortedobjects[i].did);
+            }
+        })
+
     }
     else {
         let sortedobjects = data[deptid[dept]].slice(1).sort((a, b) => (a[str] > b[str]) ? 1 : -1);
-        removeExisting();
-        showtable(sortedobjects, deptid[dept]);
+        removeExisting().then(() => {
+            showtable(sortedobjects, deptid[dept]);
+        }).catch((err) => {
+            console.log(err);
+        })
+
     }
 }
 function showtable(sortedobjects, did) {
