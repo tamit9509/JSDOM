@@ -1,0 +1,41 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    text-align: center;
+    background-color: #006400;
+    padding: 3%;
+}
+.heading{
+    
+    background-color: cornflowerblue;
+    padding: 0.5%;
+}
+.btn{
+    border: 0px;
+    border-radius: 3px;
+    background-color: cadetblue;
+    padding: 5px;
+
+}
+.btn:hover{
+    box-shadow: 0px 0px 3px;
+}
+.form{
+    background-color: whitesmoke;
+    padding: 2%;
+    box-shadow: 0px 0px 3px;
+}
+.form-text{
+    width: 20%;
+    padding: 4px;
+}
+#mylist{
+    background-color: cadetblue;
+    padding: 3%;
+    display: none;
+}
+li{
+    list-style: none;
+}
