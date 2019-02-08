@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Entry</title>
+    <link rel="stylesheet" href="css/mycss.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="first">
+            <h1>Select Department</h1>
+            <div>
+                <input type="text" id="d_id" placeholder="Department ID" readonly />
+            </div><br>
+            <div>
+                <select id="dept" onchange="setID()">
+                    <option value="">--Select--</option>
+                    <option value="IOS">IOS</option>
+                    <option value="Android">Android</option>
+                    <option value="MEAN Stack">Mean Stack</option>
+                    <option value="Game Development">Game Development</option>
+                </select>
+            </div><br>
+            <div>
+                <button class="btn" onclick="next()">Next >></button>
+            </div>
+        </div>
+        <div id="second">
+            <h1>Enter your detail</h1>
+            <div>
+                <input type="text" id="fname" onchange="getControl(this)" placeholder="First name" />
+                <span class="err"></span>
+            </div><br>
+            <div>
+                <input type="text" id="lname" onchange="getControl(this)" placeholder="Last name">
+                <span class="err"></span>
+            </div><br>
+            <div>
+                <input type="password" id="pass" onchange="validPass(this)" placeholder="Password" />
+                <span class="err"></span>
+            </div><br>
+            <div>
+                <input type="date" id="dob" placeholder="DOB" />
+                <span class="err"></span>
+            </div><br>
+            <div>
+                <input type="number" id="sal" onchange="checksal(this)" placeholder="salary" />
+                <span class="err"></span>
+            </div><br>
+            <div>
+                <input type="text" id="eid" placeholder="Employee ID" />
+                <span class="err">n</span>
+            </div><br>
+            <div>
+                <input type="text" id="did" readonly />
+            </div><br>
+            <div style="width: 85%;">
+                <button class="btn" style="background-color: royalblue" onclick="addemp()">Save</button>
+                <button class="btn" style="float:right" onclick="back()">
+                    << Back</button> </div> </div> <br>
+
+            </div><br>
+            <div class="container">
+                <div>
+                    <h3>Filter Employee Data</h3>
+                    <select id="filt" onchange="filter()">
+                        <option value="All">All</option>
+                        <option value="IOS">IOS</option>
+                        <option value="Android">Android</option>
+                        <option value="MEAN Stack">Mean Stack</option>
+                        <option value="Game Development">Game Development</option>
+                    </select>
+                </div><br>
+                <div id="tbldiv">
+                    <table id="tbl">
+                        <tr>
+                            <th onclick="sortTable(this)">First Name</th>
+                            <th onclick="sortTable(this)">Last Name</th>
+                            <th onclick="sortTable(this)">Date Of Birth</th>
+                            <th onclick="sortTable(this)">Salary</th>
+                            <th onclick="sortTable(this)">Employee ID</th>
+                            <th onclick="sortTable(this)">Department ID</th>
+                            <th onclick="sortTable(this)">Department</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+</body>
+
+</html>
