@@ -27,29 +27,35 @@ const validation = {
     "eid": ["Should start from letter 'E'", "Length must be of 3 letters", "Must include at least one digit"]
 
 }
+const blok = "block";
+const non = "none";
+
+
 $(document).ready(function () {
-    document.getElementById("second").style.display = "none";
-    document.getElementById("first").style.display = "block";
+    toggel(blok, non);
 })
+
+function toggel(first, second) {
+    document.getElementById("second").style.display = second;
+    document.getElementById("first").style.display = first;
+}
 function next() {
     var val = document.getElementById("dept");
     var dept = val.options[val.selectedIndex].value;
 
-    if (dept != "") {
-        document.getElementById("second").style.display = "block";
-        document.getElementById("first").style.display = "none";
+    if (dept) {
+        toggel(non, blok);
         return;
     }
-    alert("Select Department!")
+    alert("Select Department!");
 }
 function back() {
-    document.getElementById("second").style.display = "none";
-    document.getElementById("first").style.display = "block";
+    toggel(blok, non);
 }
 function setID() {
     var val = document.getElementById("dept");
     var dept = val.options[val.selectedIndex].value;
-    if (dept !== "") {
+    if (dept) {
         document.getElementById("d_id").value = deptid[dept];
         document.getElementById("did").value = deptid[dept];
         return;
@@ -97,23 +103,18 @@ function checksal(e) {
         err.style.display = 'block';
         return;
     }
-    else if (e.value == "") {
-        err.innerHTML = validation.require;
-        err.style.display = 'block';
-        return;
-    }
+
     err.style.display = 'none';
 }
+
 function addemp() {
     const err = document.getElementsByClassName('err');
     let emp = document.getElementsByTagName("input");
     var val = document.getElementById("dept");
     const did = emp[0].value;
     var dept = val.options[val.selectedIndex].value;
-    if (emp[1].value == "") {
-
-    }
     let employee = {};
+
     switch ("") {
         case emp[1].value:
             err[0].innerHTML = validation.require;
@@ -187,7 +188,7 @@ function showAllEmp() {
                 addRow(data[did][i], did);
             }
         }
-    }).catch((err)=>{
+    }).catch((err) => {
         console.log(err);
     })
 }
