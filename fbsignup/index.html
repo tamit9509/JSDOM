@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FB</title>
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/index.js"></script>
+</head>
+
+<body>
+    <header style="background-color:  rgb(60,90,153); padding: 1%;padding-bottom:0.3%; ">
+        <div class="logo">facebook</div>
+        <div class="rightsec" style="overflow: hidden;">
+            <div style="float: left; margin-right: -26px;">
+                <label class="labelheader" for="username">Email or Phone</label><br>
+                <input class="inputheader" type="text" id="username" />
+            </div>
+            <div style="float: left;">
+                <label class="labelheader" for="psw">Password</label><br>
+                <input class="inputheader" type="password" id="psw" /><br>
+                <span><a href="" class=""
+                        style="color: rgb(177, 169, 169); text-decoration: none;font-size: 14px; font-family: sans-serif;">Forgot
+                        account</a></span>
+            </div>
+            <div id="headbtn">
+                <button class="btnheader">Log in</button>
+            </div>
+
+        </div>
+
+    </header>
+    <section id="sec">
+        <div id="leftsect" style="width: 55%;float: left;box-sizing: border-box;">
+            <div class="usertext">
+                <span> Facebook helps you stay in touch with people invoved in your life</span>
+            </div>
+            <div id="bgimg">
+                <img src="images/net.png" alt="">
+            </div>
+
+        </div>
+        <div id="rightsect">
+
+            <form action="" style="margin-top:5%">
+                <h1 style="font-family: sans-serif;font-size: 34px;">Subscribe</h1>
+                <h3 style="font-family: sans-serif;">It's free and always will be.</h3>
+                <div style="width: 75%; margin-top:10px;">
+                    <div>
+                        <input type="text" class="forminputbox" placeholder="first name" required />
+                        <input type="text" class="forminputbox" placeholder="Last name" required />
+                    </div>
+
+                    <div style="margin-top:3%">
+                        <input type="text" id="email" class="formsingleline" placeholder="Mobile number or emial"
+                            onchange="validatemail(this)" required /><br>
+                        <input type="text" id="mail" class="formsingleline" style="margin-top: 1%;display: none"
+                            placeholder="Re-enter your email" onchange="matchmail(this)" required /><br>
+
+                    </div>
+                    <div>
+                        <input type="password" class="formsingleline" pattern="(?=.*\d)(?=.*[a-z])).{8,}"
+                            title="Must contain at least one number, letters, and at least 8 or more characters"
+                            placeholder="New Password" required /><br>
+
+                    </div><br><br>
+                    <label for="dob">Birthday</label><br>
+                    <div style="margin-top:10px;">
+                        <div class="select">
+                            <select class="dropdown" id="dd1">
+                                <option>01</option>
+                                <option>02</option>
+                                <option>03</option>
+                                <option>04</option>
+                                <option>05</option>
+                                <option>06</option>
+                                <option>07</option>
+                                <option>08</option>
+                                <option>09</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <select class="dropdown" id="dd2">
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <select class="dropdown" id="dd3">
+                                <option>1991</option>
+                                <option>1992</option>
+                                <option>1993</option>
+                                <option>1994</option>
+                                <option>1995</option>
+                                <option>1996</option>
+                                <option>1997</option>
+                                <option>1998</option>
+                                <option>1999</option>
+                                <option>2000</option>
+                                <option>2001</option>
+                                <option>2002</option>
+                                <option>2003</option>
+                                <option>2004</option>
+                                <option>2005</option>
+                                <option>2006</option>
+                                <option>2007</option>
+                                <option>2008</option>
+                                <option>2009</option>
+                                <option>2010</option>
+                                <option>2011</option>
+                                <option>2012</option>
+                                <option>2013</option>
+                                <option>2014</option>
+                                <option>2015</option>
+                                <option>2016</option>
+                                <option>2017</option>
+                                <option>2018</option>
+                                <option>2019</option>
+                            </select>
+                        </div>
+                        <div id="msgdob">
+                            <a href="" style="text-decoration: none;color: #090d4e;">Why is my fight for giving
+                                birthdays to me?</a>
+                        </div>
+                    </div><br>
+                    <div style="margin-top: 6%;">
+                        <input type="radio" name="gender" value="woman"><span style="font-family: sans-serif" checked>
+                            Female</span>
+                        <input type="radio" name="gender" value="man" style="margin-left: 15px;"><span
+                            style="font-family: sans-serif;">
+                            Male</span>
+                        <br>
+                    </div>
+                    <div style="font-family: sans-serif; width: 70%;margin-top: 15px;">
+                        <span style="font-size: 11px;color: #51535f;">By clicking Subscribe, you agree to our <a href=""
+                                style="color: blue;text-decoration: none;">terms, data policy,</a> and
+                            <a href="" style="color: blue;text-decoration: none;">cookie policy</a>. You can get SMS
+                            notifications from us and skip
+                            anytime.</span>
+                    </div>
+                    <div style="margin-top: 20px;">
+
+                        <button class="formbtn">Sign up</button>
+                    </div>
+                    <div style="margin-top: 20px;margin-bottom: 10px;">
+                        <span style="font-family: sans-serif;font-size: 14px;font-weight: bold;color: gray;">
+                            <a href="" style="color: blue;text-decoration: none;">Create</a> a <a href=""
+                                style="color: blue;text-decoration: none;">page</a> for an
+                            entity, band, or business.
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer id="footer_wrapper">
+
+        <div id="footer1" style="font-family: sans-serif;">
+            English (UK) <a href="" class="wordspace">हिन्दी</a><a href="" class="wordspace">ਪੰਜਾਬੀ</a><a href=""
+                class="wordspace"> اردو</a><a href="" class="wordspace">தமிழ்</a><a href=""
+                class="wordspace">বাংলা</a><a href="" class="wordspace">मराठी</a><a href=""
+                class="wordspace">తెలుగు</a><a href="" class="wordspace">ગુજરાતી</a><a href=""
+                class="wordspace">ಕನ್ನಡ</a><a href="" class="wordspace">മലയാളം</a><br>
+        </div>
+        <div id="footer2" style="margin-top:10px;font-family: sans-serif;">
+            <a href="">Sign Up</a><a href="" class="wordspace">Log In</a><a href="" class="wordspace">Messenger</a><a
+                href="" class="wordspace">Talkerscode</a><a href="" class="wordspace">Mobile</a><a href=""
+                class="wordspace">Find Friends</a><a href="" class="wordspace">Badges</a><a href=""
+                class="wordspace">People</a><a href="" class="wordspace">Pages</a><a href=""
+                class="wordspace">Places</a><a href="" class="wordspace">Games</a><a href="" class="wordspace"
+                class="wordspace">Locations</a><a href="" class="wordspace">Celebrities</a><a href=""
+                class="wordspace">Groups</a><a href="" class="wordspace">Moments</a><a href=""
+                class="wordspace">About</a><a href="" class="wordspace">Create
+                Advert</a><a href="" class="wordspace">Create Page</a><a href="" class="wordspace">Developers</a><a
+                href="" class="wordspace">Careers</a><a href="" class="wordspace">Privacy</a><a href=""
+                class="wordspace">Cookies</a><a href="" class="wordspace">Ads</a><a href=""
+                class="wordspace">Terms</a><a href="" class="wordspace">Help</a>
+
+        </div>
+        <div id="footer3" style="margin-top:10px;">
+            <span style="font-size: 12px;color: #403b3b;font-family: sans-serif;">Facebook &copy; 2019</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
