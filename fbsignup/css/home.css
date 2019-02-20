@@ -113,6 +113,11 @@ header{
     border: none;
     border-radius: 3px;
     box-shadow: 0px 0px 1px;
+    
+}
+input[type=text],input[type=password]{
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
 }
 .formsingleline{
     padding: 8px;
@@ -135,7 +140,7 @@ header{
     padding-left: 10%;
     padding-bottom: 1%; 
     font-size: 12px;
-
+    margin-top: 46%;
 }
 .wordspace{
     margin-left: 15px;

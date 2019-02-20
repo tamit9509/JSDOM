@@ -240,6 +240,7 @@ function showDeptEmp(dept) {
     }).catch((err) => {
         console.log(err);
     })
+    console.log(data)
 }
 function removeExisting() {
     return new Promise((resolve, reject) => {
